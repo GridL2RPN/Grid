@@ -1,157 +1,153 @@
-2019-01-23 20:04:24,515 - pypownet - INFO - step 1/50 - reward: -0.11; cumulative reward: -0.11
-2019-01-23 20:04:24,541 - pypownet - INFO - step 2/50 - reward: -0.30; cumulative reward: -0.41
-2019-01-23 20:04:24,569 - pypownet - INFO - step 3/50 - reward: -0.30; cumulative reward: -0.71
-2019-01-23 20:04:24,599 - pypownet - INFO - step 4/50 - reward: -1.66; cumulative reward: -2.37
-2019-01-23 20:04:24,628 - pypownet - INFO - step 5/50 - reward: -1.65; cumulative reward: -4.02
-2019-01-23 20:04:24,655 - pypownet - INFO - step 6/50 - reward: -1.67; cumulative reward: -5.70
-2019-01-23 20:04:24,682 - pypownet - INFO - step 7/50 - reward: -1.62; cumulative reward: -7.32
-2019-01-23 20:04:24,709 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:24,727 - pypownet - INFO - step 8/50 - reward: -13.90; cumulative reward: -21.22
-2019-01-23 20:04:24,753 - pypownet - INFO - step 9/50 - reward: -0.20; cumulative reward: -21.42
-2019-01-23 20:04:24,783 - pypownet - INFO - step 10/50 - reward: 0.13; cumulative reward: -21.29
-2019-01-23 20:04:24,809 - pypownet - INFO - step 11/50 - reward: -0.18; cumulative reward: -21.47
-2019-01-23 20:04:24,834 - pypownet - INFO - step 12/50 - reward: -0.56; cumulative reward: -22.03
-2019-01-23 20:04:24,859 - pypownet - INFO - step 13/50 - reward: -2.14; cumulative reward: -24.17
-2019-01-23 20:04:24,898 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 1 has diverged)
-2019-01-23 20:04:24,913 - pypownet - INFO - step 14/50 - reward: -13.70; cumulative reward: -37.87
-2019-01-23 20:04:24,964 - pypownet - INFO - step 15/50 - reward: -0.09; cumulative reward: -37.96
-2019-01-23 20:04:25,003 - pypownet - INFO - step 16/50 - reward: -2.05; cumulative reward: -40.01
-2019-01-23 20:04:25,040 - pypownet - INFO - step 17/50 - reward: -3.49; cumulative reward: -43.50
-2019-01-23 20:04:25,085 - pypownet - INFO - step 18/50 - reward: -2.16; cumulative reward: -45.66
-2019-01-23 20:04:25,128 - pypownet - INFO - step 19/50 - reward: -2.08; cumulative reward: -47.74
-2019-01-23 20:04:25,156 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: The grid is not connexe: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,178 - pypownet - INFO - step 20/50 - reward: -13.70; cumulative reward: -61.44
-2019-01-23 20:04:25,209 - pypownet - INFO - step 21/50 - reward: -0.18; cumulative reward: -61.63
-2019-01-23 20:04:25,242 - pypownet - INFO - step 22/50 - reward: -1.57; cumulative reward: -63.20
-2019-01-23 20:04:25,268 - pypownet - INFO - step 23/50 - reward: -1.63; cumulative reward: -64.83
-2019-01-23 20:04:25,295 - pypownet - INFO - step 24/50 - reward: -1.79; cumulative reward: -66.62
-2019-01-23 20:04:25,320 - pypownet - INFO - step 25/50 - reward: -1.74; cumulative reward: -68.36
-2019-01-23 20:04:25,355 - pypownet - INFO - step 26/50 - reward: -1.60; cumulative reward: -69.96
-2019-01-23 20:04:25,386 - pypownet - INFO - step 27/50 - reward: -1.76; cumulative reward: -71.72
-2019-01-23 20:04:25,414 - pypownet - INFO - step 28/50 - reward: -4.47; cumulative reward: -76.19
-2019-01-23 20:04:25,439 - pypownet - INFO - step 29/50 - reward: -7.03; cumulative reward: -83.21
-2019-01-23 20:04:25,472 - pypownet - INFO - step 30/50 - reward: -4.63; cumulative reward: -87.84
-2019-01-23 20:04:25,502 - pypownet - INFO - step 31/50 - reward: -4.33; cumulative reward: -92.17
-2019-01-23 20:04:25,530 - pypownet - INFO - step 32/50 - reward: -4.48; cumulative reward: -96.65
-2019-01-23 20:04:25,559 - pypownet - INFO - step 33/50 - reward: -4.63; cumulative reward: -101.28
-2019-01-23 20:04:25,588 - pypownet - INFO - step 34/50 - reward: -4.76; cumulative reward: -106.04
-2019-01-23 20:04:25,615 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,632 - pypownet - INFO - step 35/50 - reward: -13.90; cumulative reward: -119.94
-2019-01-23 20:04:25,657 - pypownet - INFO - step 36/50 - reward: -0.11; cumulative reward: -120.05
-2019-01-23 20:04:25,679 - pypownet - INFO - step 37/50 - reward: -0.28; cumulative reward: -120.33
-2019-01-23 20:04:25,703 - pypownet - INFO - step 38/50 - reward: -0.07; cumulative reward: -120.40
-2019-01-23 20:04:25,726 - pypownet - INFO - step 39/50 - reward: -0.28; cumulative reward: -120.67
-2019-01-23 20:04:25,748 - pypownet - INFO - step 40/50 - reward: -0.14; cumulative reward: -120.81
-2019-01-23 20:04:25,770 - pypownet - INFO - step 41/50 - reward: -0.28; cumulative reward: -121.08
-2019-01-23 20:04:25,792 - pypownet - INFO - step 42/50 - reward: -0.30; cumulative reward: -121.38
-2019-01-23 20:04:25,816 - pypownet - INFO - step 43/50 - reward: -0.37; cumulative reward: -121.75
-2019-01-23 20:04:25,837 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,852 - pypownet - INFO - step 44/50 - reward: -13.70; cumulative reward: -135.45
-2019-01-23 20:04:25,873 - pypownet - INFO - step 45/50 - reward: -0.00; cumulative reward: -135.45
-2019-01-23 20:04:25,895 - pypownet - INFO - step 46/50 - reward: -3.04; cumulative reward: -138.49
-2019-01-23 20:04:25,917 - pypownet - INFO - step 47/50 - reward: -5.85; cumulative reward: -144.34
-2019-01-23 20:04:25,945 - pypownet - INFO - step 48/50 - reward: -5.64; cumulative reward: -149.98
-2019-01-23 20:04:25,976 - pypownet - INFO - step 49/50 - reward: -5.85; cumulative reward: -155.84
-2019-01-23 20:04:26,003 - pypownet - INFO - step 50/50 - reward: -3.24; cumulative reward: -159.07
-.30; cumulative reward: -0.41
-2019-01-23 20:04:24,569 - pypownet - INFO - step 3/50 - reward: -0.30; cumulative reward: -0.71
-2019-01-23 20:04:24,599 - pypownet - INFO - step 4/50 - reward: -1.66; cumulative reward: -2.37
-2019-01-23 20:04:24,628 - pypownet - INFO - step 5/50 - reward: -1.65; cumulative reward: -4.02
-2019-01-23 20:04:24,655 - pypownet - INFO - step 6/50 - reward: -1.67; cumulative reward: -5.70
-2019-01-23 20:04:24,682 - pypownet - INFO - step 7/50 - reward: -1.62; cumulative reward: -7.32
-2019-01-23 20:04:24,709 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:24,727 - pypownet - INFO - step 8/50 - reward: -13.90; cumulative reward: -21.22
-2019-01-23 20:04:24,753 - pypownet - INFO - step 9/50 - reward: -0.20; cumulative reward: -21.42
-2019-01-23 20:04:24,783 - pypownet - INFO - step 10/50 - reward: 0.13; cumulative reward: -21.29
-2019-01-23 20:04:24,809 - pypownet - INFO - step 11/50 - reward: -0.18; cumulative reward: -21.47
-2019-01-23 20:04:24,834 - pypownet - INFO - step 12/50 - reward: -0.56; cumulative reward: -22.03
-2019-01-23 20:04:24,859 - pypownet - INFO - step 13/50 - reward: -2.14; cumulative reward: -24.17
-2019-01-23 20:04:24,898 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 1 has diverged)
-2019-01-23 20:04:24,913 - pypownet - INFO - step 14/50 - reward: -13.70; cumulative reward: -37.87
-2019-01-23 20:04:24,964 - pypownet - INFO - step 15/50 - reward: -0.09; cumulative reward: -37.96
-2019-01-23 20:04:25,003 - pypownet - INFO - step 16/50 - reward: -2.05; cumulative reward: -40.01
-2019-01-23 20:04:25,040 - pypownet - INFO - step 17/50 - reward: -3.49; cumulative reward: -43.50
-2019-01-23 20:04:25,085 - pypownet - INFO - step 18/50 - reward: -2.16; cumulative reward: -45.66
-2019-01-23 20:04:25,128 - pypownet - INFO - step 19/50 - reward: -2.08; cumulative reward: -47.74
-2019-01-23 20:04:25,156 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: The grid is not connexe: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,178 - pypownet - INFO - step 20/50 - reward: -13.70; cumulative reward: -61.44
-2019-01-23 20:04:25,209 - pypownet - INFO - step 21/50 - reward: -0.18; cumulative reward: -61.63
-2019-01-23 20:04:25,242 - pypownet - INFO - step 22/50 - reward: -1.57; cumulative reward: -63.20
-2019-01-23 20:04:25,268 - pypownet - INFO - step 23/50 - reward: -1.63; cumulative reward: -64.83
-2019-01-23 20:04:25,295 - pypownet - INFO - step 24/50 - reward: -1.79; cumulative reward: -66.62
-2019-01-23 20:04:25,320 - pypownet - INFO - step 25/50 - reward: -1.74; cumulative reward: -68.36
-2019-01-23 20:04:25,355 - pypownet - INFO - step 26/50 - reward: -1.60; cumulative reward: -69.96
-2019-01-23 20:04:25,386 - pypownet - INFO - step 27/50 - reward: -1.76; cumulative reward: -71.72
-2019-01-23 20:04:25,414 - pypownet - INFO - step 28/50 - reward: -4.47; cumulative reward: -76.19
-2019-01-23 20:04:25,439 - pypownet - INFO - step 29/50 - reward: -7.03; cumulative reward: -83.21
-2019-01-23 20:04:25,472 - pypownet - INFO - step 30/50 - reward: -4.63; cumulative reward: -87.84
-2019-01-23 20:04:25,502 - pypownet - INFO - step 31/50 - reward: -4.33; cumulative reward: -92.17
-2019-01-23 20:04:25,530 - pypownet - INFO - step 32/50 - reward: -4.48; cumulative reward: -96.65
-2019-01-23 20:04:25,559 - pypownet - INFO - step 33/50 - reward: -4.63; cumulative reward: -101.28
-2019-01-23 20:04:25,588 - pypownet - INFO - step 34/50 - reward: -4.76; cumulative reward: -106.04
-2019-01-23 20:04:25,615 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,632 - pypownet - INFO - step 35/50 - reward: -13.90; cumulative reward: -119.94
-2019-01-23 20:04:25,657 - pypownet - INFO - step 36/50 - reward: -0.11; cumulative reward: -120.05
-2019-01-23 20:04:25,679 - pypownet - INFO - step 37/50 - reward: -0.28; cumulative reward: -120.33
-2019-01-23 20:04:25,703 - pypownet - INFO - step 38/50 - reward: -0.07; cumulative reward: -120.40
-2019-01-23 20:04:25,726 - pypownet - INFO - step 39/50 - reward: -0.28; cumulative reward: -120.67
-2019-01-23 20:04:25,748 - pypownet - INFO - step 40/50 - reward: -0.14; cumulative reward: -120.81
-2019-01-23 20:04:25,770 - pypownet - INFO - step 41/50 - reward: -0.28; cumulative reward: -121.08
-2019-01-23 20:04:25,792 - pypownet - INFO - step 42/50 - reward: -0.30; cumulative reward: -121.38
-2019-01-23 20:04:25,816 - pypownet - INFO - step 43/50 - reward: -0.37; cumulative reward: -121.75
-2019-01-23 20:04:25,837 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,852 - pypownet - INFO - step 44/50 - reward: -13.70; cumulative reward: -135.45
-2019-01-23 20:04:25,873 - pypownet - INFO - step 45/50 - reward: -0.00; cumulative reward: -135.45
-2019-01-23 20:04:25,895 - pypownet - INFO - step 46/50 - reward: -3.04; cumulative reward: -138.49
-2019-01-23 20:04:25,917 - pypownet - INFO - step 47/50 - reward: -5.85; cumulative reward: -144.34
-2019-01-23 20:04:25,945 - pypownet - INFO - step 48/50 - reward: -5.64; cumulative reward: -149.98
-2019-01-23 20:04:25,976 - pypownet - INFO - step 49/50 - reward: -5.85; cumulative reward: -155.84
-2019-01-23 20:04:26,003 - pypownet - INFO - step 50/50 - reward: -3.24; cumulative reward: -159.07
-verged)
-2019-01-23 20:04:24,727 - pypownet - INFO - step 8/50 - reward: -13.90; cumulative reward: -21.22
-2019-01-23 20:04:24,753 - pypownet - INFO - step 9/50 - reward: -0.20; cumulative reward: -21.42
-2019-01-23 20:04:24,783 - pypownet - INFO - step 10/50 - reward: 0.13; cumulative reward: -21.29
-2019-01-23 20:04:24,809 - pypownet - INFO - step 11/50 - reward: -0.18; cumulative reward: -21.47
-2019-01-23 20:04:24,834 - pypownet - INFO - step 12/50 - reward: -0.56; cumulative reward: -22.03
-2019-01-23 20:04:24,859 - pypownet - INFO - step 13/50 - reward: -2.14; cumulative reward: -24.17
-2019-01-23 20:04:24,898 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 1 has diverged)
-2019-01-23 20:04:24,913 - pypownet - INFO - step 14/50 - reward: -13.70; cumulative reward: -37.87
-2019-01-23 20:04:24,964 - pypownet - INFO - step 15/50 - reward: -0.09; cumulative reward: -37.96
-2019-01-23 20:04:25,003 - pypownet - INFO - step 16/50 - reward: -2.05; cumulative reward: -40.01
-2019-01-23 20:04:25,040 - pypownet - INFO - step 17/50 - reward: -3.49; cumulative reward: -43.50
-2019-01-23 20:04:25,085 - pypownet - INFO - step 18/50 - reward: -2.16; cumulative reward: -45.66
-2019-01-23 20:04:25,128 - pypownet - INFO - step 19/50 - reward: -2.08; cumulative reward: -47.74
-2019-01-23 20:04:25,156 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: The grid is not connexe: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,178 - pypownet - INFO - step 20/50 - reward: -13.70; cumulative reward: -61.44
-2019-01-23 20:04:25,209 - pypownet - INFO - step 21/50 - reward: -0.18; cumulative reward: -61.63
-2019-01-23 20:04:25,242 - pypownet - INFO - step 22/50 - reward: -1.57; cumulative reward: -63.20
-2019-01-23 20:04:25,268 - pypownet - INFO - step 23/50 - reward: -1.63; cumulative reward: -64.83
-2019-01-23 20:04:25,295 - pypownet - INFO - step 24/50 - reward: -1.79; cumulative reward: -66.62
-2019-01-23 20:04:25,320 - pypownet - INFO - step 25/50 - reward: -1.74; cumulative reward: -68.36
-2019-01-23 20:04:25,355 - pypownet - INFO - step 26/50 - reward: -1.60; cumulative reward: -69.96
-2019-01-23 20:04:25,386 - pypownet - INFO - step 27/50 - reward: -1.76; cumulative reward: -71.72
-2019-01-23 20:04:25,414 - pypownet - INFO - step 28/50 - reward: -4.47; cumulative reward: -76.19
-2019-01-23 20:04:25,439 - pypownet - INFO - step 29/50 - reward: -7.03; cumulative reward: -83.21
-2019-01-23 20:04:25,472 - pypownet - INFO - step 30/50 - reward: -4.63; cumulative reward: -87.84
-2019-01-23 20:04:25,502 - pypownet - INFO - step 31/50 - reward: -4.33; cumulative reward: -92.17
-2019-01-23 20:04:25,530 - pypownet - INFO - step 32/50 - reward: -4.48; cumulative reward: -96.65
-2019-01-23 20:04:25,559 - pypownet - INFO - step 33/50 - reward: -4.63; cumulative reward: -101.28
-2019-01-23 20:04:25,588 - pypownet - INFO - step 34/50 - reward: -4.76; cumulative reward: -106.04
-2019-01-23 20:04:25,615 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,632 - pypownet - INFO - step 35/50 - reward: -13.90; cumulative reward: -119.94
-2019-01-23 20:04:25,657 - pypownet - INFO - step 36/50 - reward: -0.11; cumulative reward: -120.05
-2019-01-23 20:04:25,679 - pypownet - INFO - step 37/50 - reward: -0.28; cumulative reward: -120.33
-2019-01-23 20:04:25,703 - pypownet - INFO - step 38/50 - reward: -0.07; cumulative reward: -120.40
-2019-01-23 20:04:25,726 - pypownet - INFO - step 39/50 - reward: -0.28; cumulative reward: -120.67
-2019-01-23 20:04:25,748 - pypownet - INFO - step 40/50 - reward: -0.14; cumulative reward: -120.81
-2019-01-23 20:04:25,770 - pypownet - INFO - step 41/50 - reward: -0.28; cumulative reward: -121.08
-2019-01-23 20:04:25,792 - pypownet - INFO - step 42/50 - reward: -0.30; cumulative reward: -121.38
-2019-01-23 20:04:25,816 - pypownet - INFO - step 43/50 - reward: -0.37; cumulative reward: -121.75
-2019-01-23 20:04:25,837 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
-2019-01-23 20:04:25,852 - pypownet - INFO - step 44/50 - reward: -13.70; cumulative reward: -135.45
-2019-01-23 20:04:25,873 - pypownet - INFO - step 45/50 - reward: -0.00; cumulative reward: -135.45
-2019-01-23 20:04:25,895 - pypownet - INFO - step 46/50 - reward: -3.04; cumulative reward: -138.49
-2019-01-23 20:04:25,917 - pypownet - INFO - step 47/50 - reward: -5.85; cumulative reward: -144.34
-2019-01-23 20:04:25,945 - pypownet - INFO - step 48/50 - reward: -5.64; cumulative reward: -149.98
-2019-01-23 20:04:25,976 - pypownet - INFO - step 49/50 - reward: -5.85; cumulative reward: -155.84
-2019-01-23 20:04:26,003 - pypownet - INFO - step 50/50 - reward: -3.24; cumulative reward: -159.07
+2019-02-15 18:44:39,292 - pypownet - INFO - step 1/50 - reward: -0.24; cumulative reward: -0.24
+2019-02-15 18:44:39,316 - pypownet - INFO - step 2/50 - reward: -2.94; cumulative reward: -3.18
+2019-02-15 18:44:39,340 - pypownet - INFO - step 3/50 - reward: -2.99; cumulative reward: -6.17
+2019-02-15 18:44:39,364 - pypownet - INFO - step 4/50 - reward: -2.82; cumulative reward: -8.99
+2019-02-15 18:44:39,388 - pypownet - INFO - step 5/50 - reward: -3.07; cumulative reward: -12.05
+2019-02-15 18:44:39,411 - pypownet - INFO - step 6/50 - reward: -6.05; cumulative reward: -18.10
+2019-02-15 18:44:39,437 - pypownet - INFO - step 7/50 - reward: -10.05; cumulative reward: -28.15
+2019-02-15 18:44:39,460 - pypownet - INFO - step 8/50 - reward: -5.94; cumulative reward: -34.09
+2019-02-15 18:44:39,482 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,496 - pypownet - INFO - step 9/50 - reward: -13.90; cumulative reward: -47.99
+2019-02-15 18:44:39,520 - pypownet - INFO - step 10/50 - reward: -0.05; cumulative reward: -48.04
+2019-02-15 18:44:39,546 - pypownet - INFO - step 11/50 - reward: -0.32; cumulative reward: -48.36
+2019-02-15 18:44:39,569 - pypownet - INFO - step 12/50 - reward: -0.06; cumulative reward: -48.41
+2019-02-15 18:44:39,593 - pypownet - INFO - step 13/50 - reward: -0.29; cumulative reward: -48.70
+2019-02-15 18:44:39,616 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,631 - pypownet - INFO - step 14/50 - reward: -13.70; cumulative reward: -62.40
+2019-02-15 18:44:39,656 - pypownet - INFO - step 15/50 - reward: -0.14; cumulative reward: -62.54
+2019-02-15 18:44:39,678 - pypownet - INFO - step 16/50 - reward: -0.28; cumulative reward: -62.83
+2019-02-15 18:44:39,701 - pypownet - INFO - step 17/50 - reward: -1.97; cumulative reward: -64.79
+2019-02-15 18:44:39,724 - pypownet - INFO - step 18/50 - reward: -0.15; cumulative reward: -64.94
+2019-02-15 18:44:39,749 - pypownet - INFO - step 19/50 - reward: -1.81; cumulative reward: -66.76
+2019-02-15 18:44:39,772 - pypownet - INFO - step 20/50 - reward: -2.22; cumulative reward: -68.98
+2019-02-15 18:44:39,794 - pypownet - INFO - step 21/50 - reward: -3.15; cumulative reward: -72.13
+2019-02-15 18:44:39,817 - pypownet - INFO - step 22/50 - reward: -4.05; cumulative reward: -76.17
+2019-02-15 18:44:39,840 - pypownet - INFO - step 23/50 - reward: -4.17; cumulative reward: -80.34
+2019-02-15 18:44:39,865 - pypownet - INFO - step 24/50 - reward: -3.66; cumulative reward: -84.00
+2019-02-15 18:44:39,886 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,900 - pypownet - INFO - step 25/50 - reward: -13.90; cumulative reward: -97.90
+2019-02-15 18:44:39,922 - pypownet - INFO - step 26/50 - reward: -0.24; cumulative reward: -98.14
+2019-02-15 18:44:39,946 - pypownet - INFO - step 27/50 - reward: -0.04; cumulative reward: -98.19
+2019-02-15 18:44:39,969 - pypownet - INFO - step 28/50 - reward: -0.10; cumulative reward: -98.28
+2019-02-15 18:44:39,992 - pypownet - INFO - step 29/50 - reward: -0.51; cumulative reward: -98.79
+2019-02-15 18:44:40,015 - pypownet - INFO - step 30/50 - reward: -0.50; cumulative reward: -99.29
+2019-02-15 18:44:40,038 - pypownet - INFO - step 31/50 - reward: -0.42; cumulative reward: -99.71
+2019-02-15 18:44:40,064 - pypownet - INFO - step 32/50 - reward: -1.92; cumulative reward: -101.63
+2019-02-15 18:44:40,091 - pypownet - INFO - step 33/50 - reward: -1.92; cumulative reward: -103.55
+2019-02-15 18:44:40,115 - pypownet - INFO - step 34/50 - reward: -1.89; cumulative reward: -105.44
+2019-02-15 18:44:40,138 - pypownet - INFO - step 35/50 - reward: -2.28; cumulative reward: -107.72
+2019-02-15 18:44:40,163 - pypownet - INFO - step 36/50 - reward: -2.15; cumulative reward: -109.88
+2019-02-15 18:44:40,186 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:40,201 - pypownet - INFO - step 37/50 - reward: -13.80; cumulative reward: -123.68
+2019-02-15 18:44:40,222 - pypownet - INFO - step 38/50 - reward: -0.26; cumulative reward: -123.94
+2019-02-15 18:44:40,242 - pypownet - INFO - step 39/50 - reward: -0.07; cumulative reward: -124.00
+2019-02-15 18:44:40,266 - pypownet - INFO - step 40/50 - reward: -0.19; cumulative reward: -124.19
+2019-02-15 18:44:40,292 - pypownet - INFO - step 41/50 - reward: -0.13; cumulative reward: -124.32
+2019-02-15 18:44:40,315 - pypownet - INFO - step 42/50 - reward: -0.23; cumulative reward: -124.54
+2019-02-15 18:44:40,337 - pypownet - INFO - step 43/50 - reward: -2.98; cumulative reward: -127.52
+2019-02-15 18:44:40,361 - pypownet - INFO - step 44/50 - reward: -3.20; cumulative reward: -130.73
+2019-02-15 18:44:40,386 - pypownet - INFO - step 45/50 - reward: -5.78; cumulative reward: -136.51
+2019-02-15 18:44:40,412 - pypownet - INFO - step 46/50 - reward: -5.77; cumulative reward: -142.28
+2019-02-15 18:44:40,434 - pypownet - INFO - step 47/50 - reward: -8.54; cumulative reward: -150.83
+2019-02-15 18:44:40,458 - pypownet - INFO - step 48/50 - reward: -11.56; cumulative reward: -162.39
+2019-02-15 18:44:40,483 - pypownet - INFO - step 49/50 - reward: -11.44; cumulative reward: -173.83
+2019-02-15 18:44:40,508 - pypownet - INFO - step 50/50 - reward: -8.82; cumulative reward: -182.65
+et - INFO - step 4/50 - reward: -2.82; cumulative reward: -8.99
+2019-02-15 18:44:39,388 - pypownet - INFO - step 5/50 - reward: -3.07; cumulative reward: -12.05
+2019-02-15 18:44:39,411 - pypownet - INFO - step 6/50 - reward: -6.05; cumulative reward: -18.10
+2019-02-15 18:44:39,437 - pypownet - INFO - step 7/50 - reward: -10.05; cumulative reward: -28.15
+2019-02-15 18:44:39,460 - pypownet - INFO - step 8/50 - reward: -5.94; cumulative reward: -34.09
+2019-02-15 18:44:39,482 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,496 - pypownet - INFO - step 9/50 - reward: -13.90; cumulative reward: -47.99
+2019-02-15 18:44:39,520 - pypownet - INFO - step 10/50 - reward: -0.05; cumulative reward: -48.04
+2019-02-15 18:44:39,546 - pypownet - INFO - step 11/50 - reward: -0.32; cumulative reward: -48.36
+2019-02-15 18:44:39,569 - pypownet - INFO - step 12/50 - reward: -0.06; cumulative reward: -48.41
+2019-02-15 18:44:39,593 - pypownet - INFO - step 13/50 - reward: -0.29; cumulative reward: -48.70
+2019-02-15 18:44:39,616 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,631 - pypownet - INFO - step 14/50 - reward: -13.70; cumulative reward: -62.40
+2019-02-15 18:44:39,656 - pypownet - INFO - step 15/50 - reward: -0.14; cumulative reward: -62.54
+2019-02-15 18:44:39,678 - pypownet - INFO - step 16/50 - reward: -0.28; cumulative reward: -62.83
+2019-02-15 18:44:39,701 - pypownet - INFO - step 17/50 - reward: -1.97; cumulative reward: -64.79
+2019-02-15 18:44:39,724 - pypownet - INFO - step 18/50 - reward: -0.15; cumulative reward: -64.94
+2019-02-15 18:44:39,749 - pypownet - INFO - step 19/50 - reward: -1.81; cumulative reward: -66.76
+2019-02-15 18:44:39,772 - pypownet - INFO - step 20/50 - reward: -2.22; cumulative reward: -68.98
+2019-02-15 18:44:39,794 - pypownet - INFO - step 21/50 - reward: -3.15; cumulative reward: -72.13
+2019-02-15 18:44:39,817 - pypownet - INFO - step 22/50 - reward: -4.05; cumulative reward: -76.17
+2019-02-15 18:44:39,840 - pypownet - INFO - step 23/50 - reward: -4.17; cumulative reward: -80.34
+2019-02-15 18:44:39,865 - pypownet - INFO - step 24/50 - reward: -3.66; cumulative reward: -84.00
+2019-02-15 18:44:39,886 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,900 - pypownet - INFO - step 25/50 - reward: -13.90; cumulative reward: -97.90
+2019-02-15 18:44:39,922 - pypownet - INFO - step 26/50 - reward: -0.24; cumulative reward: -98.14
+2019-02-15 18:44:39,946 - pypownet - INFO - step 27/50 - reward: -0.04; cumulative reward: -98.19
+2019-02-15 18:44:39,969 - pypownet - INFO - step 28/50 - reward: -0.10; cumulative reward: -98.28
+2019-02-15 18:44:39,992 - pypownet - INFO - step 29/50 - reward: -0.51; cumulative reward: -98.79
+2019-02-15 18:44:40,015 - pypownet - INFO - step 30/50 - reward: -0.50; cumulative reward: -99.29
+2019-02-15 18:44:40,038 - pypownet - INFO - step 31/50 - reward: -0.42; cumulative reward: -99.71
+2019-02-15 18:44:40,064 - pypownet - INFO - step 32/50 - reward: -1.92; cumulative reward: -101.63
+2019-02-15 18:44:40,091 - pypownet - INFO - step 33/50 - reward: -1.92; cumulative reward: -103.55
+2019-02-15 18:44:40,115 - pypownet - INFO - step 34/50 - reward: -1.89; cumulative reward: -105.44
+2019-02-15 18:44:40,138 - pypownet - INFO - step 35/50 - reward: -2.28; cumulative reward: -107.72
+2019-02-15 18:44:40,163 - pypownet - INFO - step 36/50 - reward: -2.15; cumulative reward: -109.88
+2019-02-15 18:44:40,186 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:40,201 - pypownet - INFO - step 37/50 - reward: -13.80; cumulative reward: -123.68
+2019-02-15 18:44:40,222 - pypownet - INFO - step 38/50 - reward: -0.26; cumulative reward: -123.94
+2019-02-15 18:44:40,242 - pypownet - INFO - step 39/50 - reward: -0.07; cumulative reward: -124.00
+2019-02-15 18:44:40,266 - pypownet - INFO - step 40/50 - reward: -0.19; cumulative reward: -124.19
+2019-02-15 18:44:40,292 - pypownet - INFO - step 41/50 - reward: -0.13; cumulative reward: -124.32
+2019-02-15 18:44:40,315 - pypownet - INFO - step 42/50 - reward: -0.23; cumulative reward: -124.54
+2019-02-15 18:44:40,337 - pypownet - INFO - step 43/50 - reward: -2.98; cumulative reward: -127.52
+2019-02-15 18:44:40,361 - pypownet - INFO - step 44/50 - reward: -3.20; cumulative reward: -130.73
+2019-02-15 18:44:40,386 - pypownet - INFO - step 45/50 - reward: -5.78; cumulative reward: -136.51
+2019-02-15 18:44:40,412 - pypownet - INFO - step 46/50 - reward: -5.77; cumulative reward: -142.28
+2019-02-15 18:44:40,434 - pypownet - INFO - step 47/50 - reward: -8.54; cumulative reward: -150.83
+2019-02-15 18:44:40,458 - pypownet - INFO - step 48/50 - reward: -11.56; cumulative reward: -162.39
+2019-02-15 18:44:40,483 - pypownet - INFO - step 49/50 - reward: -11.44; cumulative reward: -173.83
+2019-02-15 18:44:40,508 - pypownet - INFO - step 50/50 - reward: -8.82; cumulative reward: -182.65
+rd: -28.15
+2019-02-15 18:44:39,460 - pypownet - INFO - step 8/50 - reward: -5.94; cumulative reward: -34.09
+2019-02-15 18:44:39,482 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,496 - pypownet - INFO - step 9/50 - reward: -13.90; cumulative reward: -47.99
+2019-02-15 18:44:39,520 - pypownet - INFO - step 10/50 - reward: -0.05; cumulative reward: -48.04
+2019-02-15 18:44:39,546 - pypownet - INFO - step 11/50 - reward: -0.32; cumulative reward: -48.36
+2019-02-15 18:44:39,569 - pypownet - INFO - step 12/50 - reward: -0.06; cumulative reward: -48.41
+2019-02-15 18:44:39,593 - pypownet - INFO - step 13/50 - reward: -0.29; cumulative reward: -48.70
+2019-02-15 18:44:39,616 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,631 - pypownet - INFO - step 14/50 - reward: -13.70; cumulative reward: -62.40
+2019-02-15 18:44:39,656 - pypownet - INFO - step 15/50 - reward: -0.14; cumulative reward: -62.54
+2019-02-15 18:44:39,678 - pypownet - INFO - step 16/50 - reward: -0.28; cumulative reward: -62.83
+2019-02-15 18:44:39,701 - pypownet - INFO - step 17/50 - reward: -1.97; cumulative reward: -64.79
+2019-02-15 18:44:39,724 - pypownet - INFO - step 18/50 - reward: -0.15; cumulative reward: -64.94
+2019-02-15 18:44:39,749 - pypownet - INFO - step 19/50 - reward: -1.81; cumulative reward: -66.76
+2019-02-15 18:44:39,772 - pypownet - INFO - step 20/50 - reward: -2.22; cumulative reward: -68.98
+2019-02-15 18:44:39,794 - pypownet - INFO - step 21/50 - reward: -3.15; cumulative reward: -72.13
+2019-02-15 18:44:39,817 - pypownet - INFO - step 22/50 - reward: -4.05; cumulative reward: -76.17
+2019-02-15 18:44:39,840 - pypownet - INFO - step 23/50 - reward: -4.17; cumulative reward: -80.34
+2019-02-15 18:44:39,865 - pypownet - INFO - step 24/50 - reward: -3.66; cumulative reward: -84.00
+2019-02-15 18:44:39,886 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:39,900 - pypownet - INFO - step 25/50 - reward: -13.90; cumulative reward: -97.90
+2019-02-15 18:44:39,922 - pypownet - INFO - step 26/50 - reward: -0.24; cumulative reward: -98.14
+2019-02-15 18:44:39,946 - pypownet - INFO - step 27/50 - reward: -0.04; cumulative reward: -98.19
+2019-02-15 18:44:39,969 - pypownet - INFO - step 28/50 - reward: -0.10; cumulative reward: -98.28
+2019-02-15 18:44:39,992 - pypownet - INFO - step 29/50 - reward: -0.51; cumulative reward: -98.79
+2019-02-15 18:44:40,015 - pypownet - INFO - step 30/50 - reward: -0.50; cumulative reward: -99.29
+2019-02-15 18:44:40,038 - pypownet - INFO - step 31/50 - reward: -0.42; cumulative reward: -99.71
+2019-02-15 18:44:40,064 - pypownet - INFO - step 32/50 - reward: -1.92; cumulative reward: -101.63
+2019-02-15 18:44:40,091 - pypownet - INFO - step 33/50 - reward: -1.92; cumulative reward: -103.55
+2019-02-15 18:44:40,115 - pypownet - INFO - step 34/50 - reward: -1.89; cumulative reward: -105.44
+2019-02-15 18:44:40,138 - pypownet - INFO - step 35/50 - reward: -2.28; cumulative reward: -107.72
+2019-02-15 18:44:40,163 - pypownet - INFO - step 36/50 - reward: -2.15; cumulative reward: -109.88
+2019-02-15 18:44:40,186 - pypownet - WARNING - GAME OVER! Resetting grid... (hint: Power grid outage: cascading emulation of depth 0 has diverged)
+2019-02-15 18:44:40,201 - pypownet - INFO - step 37/50 - reward: -13.80; cumulative reward: -123.68
+2019-02-15 18:44:40,222 - pypownet - INFO - step 38/50 - reward: -0.26; cumulative reward: -123.94
+2019-02-15 18:44:40,242 - pypownet - INFO - step 39/50 - reward: -0.07; cumulative reward: -124.00
+2019-02-15 18:44:40,266 - pypownet - INFO - step 40/50 - reward: -0.19; cumulative reward: -124.19
+2019-02-15 18:44:40,292 - pypownet - INFO - step 41/50 - reward: -0.13; cumulative reward: -124.32
+2019-02-15 18:44:40,315 - pypownet - INFO - step 42/50 - reward: -0.23; cumulative reward: -124.54
+2019-02-15 18:44:40,337 - pypownet - INFO - step 43/50 - reward: -2.98; cumulative reward: -127.52
+2019-02-15 18:44:40,361 - pypownet - INFO - step 44/50 - reward: -3.20; cumulative reward: -130.73
+2019-02-15 18:44:40,386 - pypownet - INFO - step 45/50 - reward: -5.78; cumulative reward: -136.51
+2019-02-15 18:44:40,412 - pypownet - INFO - step 46/50 - reward: -5.77; cumulative reward: -142.28
+2019-02-15 18:44:40,434 - pypownet - INFO - step 47/50 - reward: -8.54; cumulative reward: -150.83
+2019-02-15 18:44:40,458 - pypownet - INFO - step 48/50 - reward: -11.56; cumulative reward: -162.39
+2019-02-15 18:44:40,483 - pypownet - INFO - step 49/50 - reward: -11.44; cumulative reward: -173.83
+2019-02-15 18:44:40,508 - pypownet - INFO - step 50/50 - reward: -8.82; cumulative reward: -182.65
