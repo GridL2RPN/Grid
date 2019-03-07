@@ -186,7 +186,7 @@ class DoNothingAgent(pypownet.agent.Agent):
         power grid, and returns the chosen action."""
         # Sanity check: an observation is a structured object defined in the environment file.
         assert isinstance(observation, pypownet.environment.Observation)
-
+        print(" DO NOTHING AGENT !!! ")
         action_space = self.environment.action_space
 
         # Implement your policy here
