@@ -281,3 +281,42 @@ class RandomNodeSplitting(pypownet.agent.Agent):
         assert np.all(current_configuration == target_configuration)
 
         return action
+    
+class CustomAgent(pypownet.agent.Agent):
+
+    def __init__(self, environment):
+        super().__init__(environment)
+
+        self.verbose = True
+
+    def act(self,observation):
+        assert isinstance(observation, pypownet.environment.Observation)
+        action_space = self.environment.action_space
+
+        action = action_space.get_do_nothing_action()
+        lines_usage = observation.get_lines_capacity_usage()
+        switch_ON_list = []
+        switch_OFF_list = []
+
+        for i in range(len(lines_usage)):
+            lines_status = action_space.get_lines_status_switch_from_id(action=action,line_id=i)
+            if lines_status == 0:
+                switch_ON_list.append(i)
+                action_space.set_lines_status_switch_from_id(action=action,line_id=i,new_switch_value=1)
+            if lines_usage[i] > 1:
+                switch_OFF_list.append(i)
+                action_space.set_lines_status_switch_from_id(action=action,line_id=i,new_switch_value=0)
+        
+        action_space.verify_action_shape(action)
+        
+        reward_aslist = self.environment.simulate(action, do_sum=False)
+        reward = sum(reward_aslist)
+        if self.verbose:
+            print('reward: [', ', '.join(['%.2f' % c for c in reward_aslist]), '] =', reward)
+
+        action_name1 = 'turning ON lines ' + ''.join(['%d ' % d for d in switch_ON_list])
+        action_name2 = '\nturning OFF lines ' + ''.join(['%d ' % d for d in switch_OFF_list])
+        if self.verbose:
+            print('Action chosen: ', action_name1 + action_name2, '; expected reward %.4f' % reward)
+        
+        return action
