@@ -13,37 +13,44 @@ class Submission(pypownet.agent.Agent):
         super().__init__(environment)
         self.verbose = True
 
+    def chooseAction(self, template, rewardRef):
+        if 0 in template:
+            actions = []
+            for i in range(len(template)):
+                test = template.copy()
+                if test[i] != 1:
+                    test[i] = 1
+                    actions.append(test)
+            rewards = []
+            for act in actions:
+                act = self.environment.action_space.array_to_action(act)
+                rewards.append(sum(self.environment.simulate(act, do_sum = False)))
+            rewards = np.asarray(rewards)
+            best_index = np.argmax(rewards)
+            if rewards[best_index] > rewardRef:
+                return actions[best_index]
+        return template
+
     def act(self, observation):
         # Sanity check: an observation is a structured object defined in the environment file.
         assert isinstance(observation, pypownet.environment.Observation)
         action_space = self.environment.action_space
 
         # Create template of action with no switch activated (do-nothing action)
-        action = action_space.get_do_nothing_action()
-
-        # Select lines to switch
-        if True :
-            lines_load = observation.get_lines_capacity_usage()
-            nb_lines = len(lines_load)
-            assert nb_lines == action_space.lines_status_subaction_length
-            for i in range(nb_lines):
-                lines_status = action_space.get_lines_status_switch_from_id(action,i)
-                if lines_status == 0:
-                    action_space.set_lines_status_switch_from_id(action=action,line_id=i,new_switch_value=0)
-                if lines_load[i] > 1:
-                    action_space.set_lines_status_switch_from_id(action=action,line_id=i,new_switch_value=1)
-                    action_name = 'switching status of line %d' % i
-                    if self.verbose:
-                        print('Action chosen: ', action_name, '; expected reward %.4f' % reward)
-
-
-        # Test the reward on the environment
-        reward_aslist = self.environment.simulate(action, do_sum=False)
+        bestAction = np.zeros(action_space.action_length)
+        stop = 1
+        cpt = 0
+        while(True):
+            rew = sum(self.environment.simulate(action_space.array_to_action(bestAction), do_sum = False))
+            newBestAction = self.chooseAction(bestAction,rew)
+            if (np.array_equal(newBestAction,bestAction)):
+                break
+            bestAction = newBestAction
+            cpt = cpt+1
+            if cpt == stop:
+                break
+        reward_aslist = self.environment.simulate(action_space.array_to_action(bestAction), do_sum=False)
         reward = sum(reward_aslist)
         if self.verbose:
             print('reward: [', ', '.join(['%.2f' % c for c in reward_aslist]), '] =', reward)
-
-
-        return action
-
-        # No learning (i.e. self.feed_reward does pass)
+        return action_space.array_to_action(bestAction)
