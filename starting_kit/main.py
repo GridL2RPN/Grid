@@ -9,11 +9,12 @@ import argparse
 from pypownet.environment import RunEnv
 from pypownet.runner import Runner
 import example_submission.my_agents
+import example_submission.baseline_agents
 
 
 
 parser = argparse.ArgumentParser(description='CLI tool to run experiments using PyPowNet.')
-parser.add_argument('-a', '--agent', metavar='AGENT_CLASS', default='CustomAgent', type=str,
+parser.add_argument('-a', '--agent', metavar='AGENT_CLASS', default='DoNothingAgent', type=str,
                     help='class to use for the agent (must be within the \'pypownet/agent.py\' file); '
                          'default class Agent')
 parser.add_argument('-n', '--niter', type=int, metavar='NUMBER_ITERATIONS', default='1000',
@@ -21,7 +22,7 @@ parser.add_argument('-n', '--niter', type=int, metavar='NUMBER_ITERATIONS', defa
 parser.add_argument('-p', '--parameters', metavar='PARAMETERS_FOLDER', default='./public_data/', type=str,
                     help='parent folder containing the parameters of the simulator to be used (folder should contain '
                          'configuration.json and reference_grid.m)')
-parser.add_argument('-lv', '--level', metavar='GAME_LEVEL', type=str, default='easy',
+parser.add_argument('-lv', '--level', metavar='GAME_LEVEL', type=str, default='hard',
                     help='game level of the timestep entries to be played (default \'easy\')')
 parser.add_argument('-s', '--start-id', metavar='CHRONIC_START_ID', type=int, default=0,
                     help='id of the first chronic to be played (default 0)')
@@ -29,7 +30,7 @@ parser.add_argument('-lm', '--loop-mode', metavar='CHRONIC_LOOP_MODE', type=str,
                     help='the way the game will loop through chronics of the specified game level: "natural" will'
                          ' play chronic in alphabetical order, "random" will load random chronics ids and "fixed"'
                          ' will always play the same chronic folder (default "fixed")')
-parser.add_argument('-m', '--game-over-mode', metavar='GAME_OVER_MODE', type=str, default='soft',
+parser.add_argument('-m', '--game-over-mode', metavar='GAME_OVER_MODE', type=str, default='hard',
                     help='game over mode to be played: either "soft", and after each game over the simulator will load '
                          'the next timestep of the same chronic; or "hard", and after each game over the simulator '
                          'will load the first timestep of the next grid, depending on --loop-mode parameter (default '

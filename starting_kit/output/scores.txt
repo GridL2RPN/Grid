@@ -1,2 +1,2 @@
-score: -2.7
+score: -3894.21
 Duration: 0.000000

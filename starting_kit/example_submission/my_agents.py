@@ -1,15 +1,35 @@
 import pypownet.agent
 import pypownet.environment
+import example_submission.preprocessing
 import numpy as np
 import os
 import itertools
 import functools
+import csv
 import random
 import math
 from time import gmtime, strftime
 
 
+class DoNothingAgent(pypownet.agent.Agent):
+    def __init__(self, environment):
+        super().__init__(environment)
 
+    def act(self, observation):
+        """ Produces an action given an observation of the environment. Takes as argument an observation of the current
+        power grid, and returns the chosen action."""
+        # Sanity check: an observation is a structured object defined in the environment file.
+        assert isinstance(observation, pypownet.environment.Observation)
+        #print(" DO NOTHING AGENT !!! ")
+        action_space = self.environment.action_space
+
+        # Implement your policy here
+        # Example of the do-nothing policy that produces no action (i.e. an action that does nothing) each time
+        do_nothing_action = action_space.get_do_nothing_action()
+
+        # Sanity check: verify the good overall structure of the returned action; raises exceptions if not valid
+        assert action_space.verify_action_shape(do_nothing_action)
+        return do_nothing_action
 
 class ActIOnManager(object):
     def __init__(self, destination_path='saved_actions.csv', delete=True):
@@ -175,18 +195,199 @@ class GreedySearch(pypownet.agent.Agent):
 
 class QLearningAgent(pypownet.agent.Agent):
 
-    def __init__(self, environment, action_file, state_file):
+    def __init__(self, environment):
         super().__init__(environment)
         self.verbose = True
-        self.action_set = self.load_actions(action_file)
-        self.state_set = self.load_states(state_file)
-        self.policy = self.compute_polic
+        prepro = example_submission.preprocessing.Preprocessing("saved_actions.csv","saved_states.csv","saved_rewards.csv")
+        self.policy = prepro.main()
+        self.epsilon = 0.1
+        self.delta = 0.1
+
+    """
+    Détermine la politique à partir des fichiers préprocessés
+    """
+
+    def compute_policy(self):
+        policy = dict()
+        for state in self.state_set:
+            policy[state] = []
+        return policy
+
+    """
+    Charge l'ensemble des id des actions depuis un fichier préprocessé
+    """
 
     def load_actions(self,f):
         pass
 
+    """
+    Renvoie l'action associée à l'id donnée
+    """
+
+    def decode_action(self, id_action):
+        pass
+
+    """
+    Renvoie l'état associé à l'id donnée
+    """
+
+    def decode_state(self, id_state):
+        pass
+
+    """
+    Charge l'ensemble des id des états depuis un fichier préprocessé
+    """
+
     def load_states(self, f):
         pass
 
+
+
+    def compare_states(self, state_ref, state_check):
+        assert len(state_ref) == len(state_check)
+        newState = np.zeros(len(state_ref))
+        for i in range(len(state_ref)):
+            newState[i] = state_ref[i] - state_check[i]
+        return (np.linalg.norm(newState) <= self.delta)
+
+
+
+
+
+
+    """
+    Détermine une action à partir de l'ensemble de données fournies et d'une observation de l'état courant
+    """
+
     def act(self, observation):
-        pass
+        state = observation.as_array()
+        action_space = self.environment.action_space
+        for i in range(len(self.policy[0])):
+            if (self.compare_states(self.policy[0][i], state)):
+                draw = random.random()
+                if (draw < self.epsilon):
+                    index = random.randint(0,len(self.policy[1][i]))
+                    return action_space.array_to_action(self.policy[1][i][index])
+                else:
+                    best_rew = -1000
+                    index = -1
+                    for j in range(len(self.policy[2][i])):
+                       if (self.policy[2][i][j] > best_rew):
+                          best_rew = self.policy[2][i][j]
+                          best_index = j
+                    return action_space.array_to_action(self.policy[1][i][best_index])
+        self.policy[0].append(state)
+        self.policy[1].append(self.policy[1][0])
+        self.policy[2].append(np.zeros(len(self.policy[2][0])))
+        index = random.randint(0,len(self.policy[1][-1])-1)
+        return action_space.array_to_action(self.policy[1][-1][index])
+        print("x")
+        return action_space.get_do_nothing_action()
+
+    """
+    Préprocesse les fichiers .csv contenant les etats, les actions et les rewards correspondantes
+    """
+
+    def preprocessing(self, actions_file, states_file, reward_file):
+        hashmap = dict()
+        actions = []
+        rewards = []
+        action_set = dict()
+        with open(actions_file) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                actions.append(row)
+        with open(reward_file) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter = ',')
+            for row in csv_reader:
+                rewards.append(row[0])
+        for i in range(len(actions)):
+            rewards[i] = float(rewards[i])
+            for j in range(len(actions[i])):
+                actions[i][j] = int(actions[i][j])
+            idAction = self.hash_function_action(actions[i])
+            #print(idAction)
+            action_set[idAction] = actions[i]
+        """
+        Pour chaque état, hache l'état puis vérifie si la clé existe déjà. Si elle n'existe pas on la rajoute à la table avec l'action et la reward correspondante, sinon on ajoute l'action et la reward à la liste
+        """
+        with open(states_file) as csv_file:
+            csv_reader= csv.reader(csv_file, delimiter=',')
+            line_indice = 0
+            for row in csv_reader:
+                for i in range(len(row)):
+                    row[i] = float(row[i])
+                idState = self.hash_function_state(row)
+                if not(idState in hashmap):
+                    hashmap[idState] = [ [self.hash_function_action(actions[line_indice])],[rewards[line_indice]] ]
+                    #print(hashmap[idState])
+                else:
+                    #print("xxx")
+                    temp0 = hashmap[idState][0]
+                    temp0.append(self.hash_function_action(actions[line_indice]))
+                    temp1 = hashmap[idState][1]
+                    temp1.append(rewards[line_indice])
+                    hashmap[idState] = [ temp0,temp1 ]
+                line_indice += 1
+        for key, vals in hashmap.items():
+            print(key, " : ", vals)
+        print("##################################################################")
+        for key, vals in action_set.items():
+            print(key, " : ", vals)
+        #print(action_set)
+        return hashmap, action_set
+
+    def hash_function_state(self, array):
+        sumArray = 0
+        for i in range(len(array)):
+            sumArray = sumArray + int(array[i]*100)
+        return sumArray
+
+    def hash_function_action(self, array):
+        idArray = ""
+        for i in range(len(array)):
+            if (array[i] == 1):
+                idArray += str(i)
+        return idArray
+
+
+from sklearn import datasets
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+
+
+class ImitationAgent(pypownet.agent.Agent):
+
+    def __init__(self, environment):
+        super().__init__(environment)
+        prepro = example_submission.preprocessing.Preprocessing("saved_actions.csv","saved_states.csv","saved_rewards.csv")
+        self.data = prepro.main()
+        X = self.data[0]
+        y = self.data[1]
+        y_label = []
+        for i in range(len(y)):
+            y_label.append(self.compute_action_key(y[i]))
+        self.agent = SVC(kernel = 'linear', C=1).fit(X, y_label)
+
+    def compute_action_key(self, array):
+        key =""
+        for i in range(len(array)):
+            key = key + str(array[i])
+        return key
+
+    def decode_from_key(self, key):
+        action = np.zeros(len(key[0]))
+        for i in range(len(key[0])):
+            if key[0][i] == "1":
+                action[i] = 1
+        return action
+
+    def act(self, observation):
+        state = observation.as_array()
+        id_action = self.agent.predict([state])
+        action_space = self.environment.action_space
+        return action_space.array_to_action(self.decode_from_key(id_action))

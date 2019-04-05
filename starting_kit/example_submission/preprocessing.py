@@ -18,7 +18,7 @@ class Preprocessing(object):
         states = []
 
         #On charge dans trois tableaux différents, les fichiers d'actions, états et rewards qui sont sous la forme de chaines de string
-
+        # Importing actions stored
         with open(actions_file) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
@@ -27,7 +27,7 @@ class Preprocessing(object):
             csv_reader = csv.reader(csv_file, delimiter = ',')
             for row in csv_reader:
                 rewards.append(row[0])
-        with open(states_file) as csv_file:
+        with open(states_file) as csv_file: 
             csv_reader= csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
                 states.append(row)
@@ -124,4 +124,8 @@ class Preprocessing(object):
 
     def main(self):
         self.action_set = self.reduce_actions()
-        return self.compute_policy()
+        actions_label = []
+        for i in self.action_set:
+            actions_label.append(i)
+        return [self.states, self.actions, actions_label]
+        #return self.compute_policy()
