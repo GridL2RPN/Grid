@@ -129,3 +129,6 @@ class Preprocessing(object):
             actions_label.append(i)
         return [self.states, self.actions, actions_label]
         #return self.compute_policy()
+
+    def mainQLearning(self):
+        return self.compute_policy()
