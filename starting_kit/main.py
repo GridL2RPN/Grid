@@ -3,7 +3,7 @@ import time
 import logging
 import sys
 from importlib import reload
-
+import random
 
 import argparse
 from pypownet.environment import RunEnv
@@ -49,6 +49,7 @@ parser.add_argument('-vv', '--vverbose', action='store_true',
 
 
 def main():
+    random.seed()
     args = parser.parse_args()
     env_class = RunEnv
     agent_class = eval('example_submission.my_agents.{}'.format(args.agent))

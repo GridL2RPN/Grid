@@ -9,6 +9,16 @@ import csv
 import random
 import math
 from time import gmtime, strftime
+import scipy
+import _pickle as cPickle
+from sklearn import svm
+from sklearn import datasets
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 
 
 class DoNothingAgent(pypownet.agent.Agent):
@@ -80,6 +90,7 @@ class GreedySearch(pypownet.agent.Agent):
         self.ioman = ActIOnManager(destination_path='saved_actions.csv')
         self.ioman2 = ActIOnManager(destination_path='saved_states.csv')
         self.ioman3  = ActIOnManager(destination_path='saved_rewards.csv')
+        random.seed()
 
     def actGS(self, observation):
         import itertools
@@ -182,7 +193,7 @@ class GreedySearch(pypownet.agent.Agent):
         assert np.all(current_configuration == target_configuration)
 
         # Dump best action into stored actions file
-        #self.ioman.dump(action)
+         #self.ioman.dump(action)
 
         return action
 
@@ -193,9 +204,7 @@ class GreedySearch(pypownet.agent.Agent):
         else:
             return self.actGS(observation)
 
-import scipy
-import _pickle as cPickle
-from sklearn import svm
+
 
 class QLearningAgent(pypownet.agent.Agent):
     """
@@ -204,6 +213,7 @@ class QLearningAgent(pypownet.agent.Agent):
 
 
     def __init__(self, environment):
+        random.seed()
         super().__init__(environment)
         self.verbose = True
         #Loads data from the files
@@ -213,7 +223,7 @@ class QLearningAgent(pypownet.agent.Agent):
 
         #If there is no previous version of the classifier, computes a new one
         #if not(os.path.isfile('my_classifier.pkl')):
-        if True:
+        if False:
             print("step1")
             del(prepro)
             #Creates a set to train the classifier
@@ -226,7 +236,7 @@ class QLearningAgent(pypownet.agent.Agent):
                 y_label.append(self.compute_action_key(y[i]))
             print("step2")
             #Trains the classifier
-            self.agent = svm.SVR(kernel = 'linear', C=1).fit(X, y_label)
+            self.agent = SVC(kernel = 'linear', C=1).fit(X, y_label)
             #stores the classifier in a file
             with open('my_classifier.pkl', 'wb') as fid:
                 cPickle.dump(self.agent, fid)
@@ -237,9 +247,8 @@ class QLearningAgent(pypownet.agent.Agent):
         #Initiates all the attributes of the agent
         self.Q = self.init_Q()
         self.epsilon = 0.1
-        self.delta = 0.1
-        self.gamma = 0.1
-        self.alpha = 0.1
+        self.gamma = 0.5
+        self.alpha = 0.5
 
     """
     Initiates the Q_pi(s,a) function with for every state an array of zeros (one zero for each action in the action set)
@@ -343,18 +352,13 @@ class QLearningAgent(pypownet.agent.Agent):
 
 
 
-from sklearn import datasets
-from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
+
 
 
 class ImitationAgent(pypownet.agent.Agent):
 
     def __init__(self, environment):
+        random.seed()
         super().__init__(environment)
         prepro = example_submission.preprocessing.Preprocessing("saved_actions.csv","saved_states.csv","saved_rewards.csv")
         self.data = prepro.main()

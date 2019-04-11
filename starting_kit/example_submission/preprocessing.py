@@ -68,57 +68,6 @@ class Preprocessing(object):
         return key
 
     """
-    Compare la norme de la différence entre deux vecteurs et renvoie True si elle est inférieure à un seuil delta arbitraire
-    """
-
-    def compare_states(self, state_ref, state_check):
-        assert len(state_ref) == len(state_check)
-        newState = np.zeros(len(state_ref))
-        for i in range(len(state_ref)):
-            newState[i] = state_ref[i] - state_check[i]
-        return (np.linalg.norm(newState) <= self.delta)
-
-    """
-    Détermine une première version de politique à partir des données
-    """
-
-    def compute_policy(self):
-        policy = [dict()]
-        new_states = [self.states[0]]
-        new_actions = [[self.actions[0]]]
-        new_rewards = [[self.rewards[0]]]
-        for i in range(1,len(self.states)):
-            exists = False
-            for j in range(len(new_states)):
-                if not(exists):
-                    if self.compare_states(new_states[j],self.states[i]):
-                       new_actions[j].append(self.actions[i])
-                       new_rewards[j].append(self.rewards[i])
-                       exists = True
-            if not(exists):
-                new_states.append(self.states[i])
-                new_actions.append([self.actions[i]])
-                new_rewards.append([self.rewards[i]])
-        for i in range(len(new_states)):
-            for j in self.action_set:
-                if not(self.array_in_arraySet(self.action_set[j],new_actions[i])):
-                    new_actions[i].append(self.action_set[j])
-                    new_rewards[i].append(-1.0)
-        return [ new_states, new_actions, new_rewards]
-
-    def array_in_arraySet(self, array, arraySet):
-        for i in range(len(arraySet)):
-            assert len(array) == len(arraySet[i])
-            equals = True
-            for j in range(len(array)):
-                if array[j] != arraySet[i][j]:
-                    equals = False
-            if equals:
-                return True
-        return False
-
-
-    """
     Méthode principale renvoyant les données préprocessées
     """
 
@@ -128,7 +77,4 @@ class Preprocessing(object):
         for i in self.action_set:
             actions_label.append(i)
         return [self.states, self.actions, actions_label]
-        #return self.compute_policy()
 
-    def mainQLearning(self):
-        return self.compute_policy()
