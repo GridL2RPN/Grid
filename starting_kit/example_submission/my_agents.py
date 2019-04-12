@@ -21,8 +21,9 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 
-
+    
 class DoNothingAgent(pypownet.agent.Agent):
+    """Agent which takes no actions """
     def __init__(self, environment):
         super().__init__(environment)
 
@@ -41,8 +42,10 @@ class DoNothingAgent(pypownet.agent.Agent):
         # Sanity check: verify the good overall structure of the returned action; raises exceptions if not valid
         assert action_space.verify_action_shape(do_nothing_action)
         return do_nothing_action
-
+    
 class ActIOnManager(object):
+    """This class' methods writes the data gathered by our preprocessing agent into files"""
+    
     def __init__(self, destination_path='saved_actions.csv', delete=True):
         self.actions = []
         self.destination_path = destination_path
@@ -369,6 +372,13 @@ class ImitationAgent(pypownet.agent.Agent):
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
         self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'logistic').fit(X, y_label)
+        if True:
+            self.act_id = dict()
+            for i in len(self.data[2]):
+                act_id[i] = selft.data[2][i]
+            self.act_count = dict()
+            for key in self.data[2]:
+                act_count[key] = 0
 
     def compute_action_key(self, array):
         key =""
@@ -382,7 +392,10 @@ class ImitationAgent(pypownet.agent.Agent):
             if key[0][i] == "1":
                 action[i] = 1
         return action
-
+    
+    def retrieve_action_count(self,key):
+        return act_count
+        
     def act(self, observation):
         state = observation.as_array()
         id_action = self.agent.predict([state])
