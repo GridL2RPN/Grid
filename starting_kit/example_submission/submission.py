@@ -3,7 +3,7 @@ import pypownet.environment
 import numpy as np
 import os
 import preprocessing
-
+import random
 
 from sklearn import datasets
 from sklearn.metrics import confusion_matrix
@@ -12,23 +12,22 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
 
 
 class Submission(pypownet.agent.Agent):
-    """
-    An example of a baseline controler that randomly switches the status of one random power line per timestep (if the
-    random line is previously online, switch it off, otherwise switch it on).
-    """
+
     def __init__(self, environment):
+        random.seed()
         super().__init__(environment)
-        prepro = preprocessing.Preprocessing("saved_actions.csv","saved_states.csv","saved_rewards.csv")
+        prepro = preprocessing.Preprocessing("program/saved_actions.csv","program/saved_states.csv","program/saved_rewards.csv")
         self.data = prepro.main()
         X = self.data[0]
         y = self.data[1]
         y_label = []
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
-        self.agent = GaussianNB().fit(X, y_label)
+        self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'logistic').fit(X, y_label)
 
     def compute_action_key(self, array):
         key =""

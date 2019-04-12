@@ -49,8 +49,8 @@ class ActIOnManager(object):
         print('Storing actions at', destination_path)
 
         # Delete last path with same name by default!!!
-        if delete and os.path.exists(destination_path):
-            os.remove(destination_path)
+        #if delete and os.path.exists(destination_path):
+        #    os.remove(destination_path)
 
     def dump(self, action):
         with open(self.destination_path, 'a') as f:
@@ -198,10 +198,43 @@ class GreedySearch(pypownet.agent.Agent):
 
         return action
 
+    def actRLS(self, observation):
+        # Sanity check: an observation is a structured object defined in the environment file.
+        assert isinstance(observation, pypownet.environment.Observation)
+        action_space = self.environment.action_space
+
+        # Create template of action with no switch activated (do-nothing action)
+        action = action_space.get_do_nothing_action()
+
+        # Randomly switch one line
+        l = np.random.randint(action_space.lines_status_subaction_length)
+        action_space.set_lines_status_switch_from_id(action=action,
+                                                     line_id=l,
+                                                     new_switch_value=1)
+
+        # Test the reward on the environment
+        reward_aslist = self.environment.simulate(action, do_sum=False)
+        reward = sum(reward_aslist)
+        if self.verbose:
+            print('reward: [', ', '.join(['%.2f' % c for c in reward_aslist]), '] =', reward)
+
+        action_name = 'switching status of line %d' % l
+        if self.verbose:
+            print('Action chosen: ', action_name, '; expected reward %.4f' % reward)
+
+        return action
+
+        # No learning (i.e. self.feed_reward does pass)
+
+
+
+
     def act(self, observation):
         x = random.random()
         if x<= self.epsilon:
             return self.actRNS(observation)
+        elif x <= 2*self.epsilon:
+            return self.actRLS(observation)
         else:
             return self.actGS(observation)
 
@@ -212,7 +245,7 @@ class QLearningAgent(pypownet.agent.Agent):
     This agent uses a Q-Learning strategy to interact with the environment. He first creates an action set from the actions taken with the GreedySearchAgent and the sorts all the states that he encountered with the GreedySearch in a discrete state set defined with the couples (s,a) where s is the state and a the action took by the GreedySearch acting as a label.
     """
 
-
+    
     def __init__(self, environment):
         random.seed()
         super().__init__(environment)
@@ -368,7 +401,7 @@ class ImitationAgent(pypownet.agent.Agent):
         y_label = []
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
-        self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'logistic').fit(X, y_label)
+        self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'tanh').fit(X, y_label)
 
     def compute_action_key(self, array):
         key =""
