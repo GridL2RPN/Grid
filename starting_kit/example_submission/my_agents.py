@@ -13,6 +13,7 @@ import scipy
 import _pickle as cPickle
 from sklearn import svm
 from sklearn import datasets
+from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
@@ -223,7 +224,7 @@ class QLearningAgent(pypownet.agent.Agent):
 
         #If there is no previous version of the classifier, computes a new one
         #if not(os.path.isfile('my_classifier.pkl')):
-        if False:
+        if True:
             print("step1")
             del(prepro)
             #Creates a set to train the classifier
@@ -236,7 +237,7 @@ class QLearningAgent(pypownet.agent.Agent):
                 y_label.append(self.compute_action_key(y[i]))
             print("step2")
             #Trains the classifier
-            self.agent = SVC(kernel = 'linear', C=1).fit(X, y_label)
+            self.agent = SVC(kernel = 'linear', C=1, probability = True).fit(X, y_label)
             #stores the classifier in a file
             with open('my_classifier.pkl', 'wb') as fid:
                 cPickle.dump(self.agent, fid)
@@ -367,7 +368,7 @@ class ImitationAgent(pypownet.agent.Agent):
         y_label = []
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
-        self.agent = SVC(kernel = 'linear', C=1).fit(X, y_label)
+        self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'logistic').fit(X, y_label)
 
     def compute_action_key(self, array):
         key =""
