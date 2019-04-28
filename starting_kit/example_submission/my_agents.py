@@ -521,7 +521,7 @@ class ImitationAgent(pypownet.agent.Agent):
         X = self.data[0]
         y = self.data[1]
         y_label = []
-        sampleSize = len(X)/10
+        sampleSize = int(len(X)/10)
         for i in range(sampleSize):
             y_label.append(self.compute_action_key(y[i]))
         testX = X[0:sampleSize]
