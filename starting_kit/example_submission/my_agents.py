@@ -516,16 +516,6 @@ class ImitationAgent(pypownet.agent.Agent):
             if key[0][i] == "1":
                 action[i] = 1
         return action
-    
-    def fitting_rate(self):
-        X = self.data[0]
-        y = self.data[1]
-        y_label = []
-        sampleSize = int(len(X)/10)
-        for i in range(sampleSize):
-            y_label.append(self.compute_action_key(y[i]))
-        testX = X[0:sampleSize]
-        return self.agent.score(X,y_label)
 
     def act(self, observation):
         state = observation.as_array()
