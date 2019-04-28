@@ -193,7 +193,6 @@ class QLearningAgent(pypownet.agent.Agent):
 
     
     def __init__(self, environment):
-        
         random.seed()
         super().__init__(environment)
         prepro = example_submission.preprocessing.Preprocessing("saved_actions.csv","saved_states.csv","saved_rewards.csv")
@@ -204,12 +203,6 @@ class QLearningAgent(pypownet.agent.Agent):
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
         self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'tanh').fit(X, y_label)
-        print("step3")
-        #Initiates all the attributes of the agent
-        self.Q = self.init_Q()
-        self.epsilon = 0.1
-        self.gamma = 0.5
-        self.alpha = 0.5
 
     """
     Initiates the Q_pi(s,a) function with for every state an array of zeros (one zero for each action in the action set)
