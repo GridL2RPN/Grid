@@ -9,10 +9,6 @@ class Preprocessing(object):
 
     def __init__(self, actions_file, states_file, rewards_file):
 
-        #Initialisation d'un delta arbitraire pour la comparaison d'états
-
-        self.delta = 0.1
-
         actions = []
         rewards = []
         states = []
