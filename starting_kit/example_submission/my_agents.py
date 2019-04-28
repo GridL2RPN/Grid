@@ -203,6 +203,10 @@ class QLearningAgent(pypownet.agent.Agent):
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
         self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'tanh').fit(X, y_label)
+        self.Q = self.init_Q()
+        self.epsilon = 0.1
+        self.gamma = 0.5
+        self.alpha = 0.5
 
     """
     Initiates the Q_pi(s,a) function with for every state an array of zeros (one zero for each action in the action set)
