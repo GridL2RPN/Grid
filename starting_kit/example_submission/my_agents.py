@@ -525,7 +525,7 @@ class ImitationAgent(pypownet.agent.Agent):
         for i in range(sampleSize):
             y_label.append(self.compute_action_key(y[i]))
         testX = X[0:sampleSize]
-        agent.score(X,y_label)
+        return agent.score(X,y_label)
 
     def act(self, observation):
         state = observation.as_array()
