@@ -502,7 +502,7 @@ class ImitationAgent(pypownet.agent.Agent):
         y_label = []
         for i in range(len(y)):
             y_label.append(self.compute_action_key(y[i]))
-        self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'tanh').fit(X, y_label)
+        self.agent = MLPClassifier(learning_rate = 'adaptive', activation = 'tanh',early_stopping = True).fit(X, y_label)
 
     def compute_action_key(self, array):
         key =""
@@ -516,6 +516,16 @@ class ImitationAgent(pypownet.agent.Agent):
             if key[0][i] == "1":
                 action[i] = 1
         return action
+    
+    def fitting_rate(self):
+        X = self.data[0]
+        y = self.data[1]
+        y_label = []
+        sampleSize = len(X)/10
+        for i in range(sampleSize):
+            y_label.append(self.compute_action_key(y[i]))
+        testX = X[0:sampleSize]
+        agent.score(X,y_label)
 
     def act(self, observation):
         state = observation.as_array()
